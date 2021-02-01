@@ -1,0 +1,37 @@
+.wrapper {
+    --height: 1.5rem;
+
+    background-color: var(--background-darker);
+    padding: .5rem .7rem;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: 500px;
+}
+
+.wrapper:focus-within {
+    outline: 2px solid var(--grey-lighter);
+}
+
+.input {
+    border: none;
+    background-color: transparent;
+    height: var(--height);
+
+    flex-grow: 1;
+
+    font-size: 100%;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.icon {
+    height: var(--height);
+    width: var(--height);
+
+    margin-left: .5rem;
+}

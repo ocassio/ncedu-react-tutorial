@@ -1,0 +1,19 @@
+.root {
+    display: grid;
+    grid-template-columns: auto;
+    gap: .75rem;
+
+    margin: .75rem;
+}
+
+@media screen and (min-width: 700px) {
+    .root {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (min-width: 1140px) {
+    .root {
+        grid-template-columns: auto auto auto;
+    }
+}

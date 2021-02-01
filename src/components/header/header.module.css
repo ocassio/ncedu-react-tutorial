@@ -1,0 +1,28 @@
+.root {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: 1.5rem;
+
+    background-color: var(--background);
+    box-shadow: 0 30px 30px rgba(0,0,0,.02),0 0 8px rgba(0,0,0,.03),0 1px 0 rgba(0,0,0,.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.root a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.menuItem + .menuItem {
+    margin-left: 1.5rem;
+}
