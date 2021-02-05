@@ -1,33 +1,21 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Header from '../header/header.component'
 import ProductsList from '../products-list/products-list.component'
 import styles from './app.module.css'
 
-class App extends Component {
+const App = () => {
+  const [searchQuery, setSearchQuery] = useState('')
 
-  state = {
-    searchQuery: ''
-  }
-  
-  render() {
-    return (
-      <div>
-        <Header onSearchChange={this.handleSearchChange} />
-        <div className={styles.container}>
-          <main className={styles.main}>
-            <ProductsList query={this.state.searchQuery} />
-          </main>
-        </div>
+  return (
+    <div>
+      <Header onSearchChange={setSearchQuery} />
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <ProductsList query={searchQuery} />
+        </main>
       </div>
-    )
-  }
-
-  handleSearchChange = (value) => {
-    this.setState({
-      searchQuery: value
-    })
-  }
-
+    </div>
+  )
 }
 
 export default App
