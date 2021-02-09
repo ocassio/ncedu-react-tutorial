@@ -1,0 +1,19 @@
+.button {
+    padding: .75rem .5rem;
+    text-transform: uppercase;
+    background-color: #333;
+    border-color: #333;
+    border-radius: 4px;
+    color: var(--background);
+    font-weight: 500;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: var(--background);
+    color: #333;
+}
+
+.button:focus {
+    outline: none;
+}

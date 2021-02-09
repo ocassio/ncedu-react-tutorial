@@ -1,2 +1,5 @@
 @import './globals.css';
 @import './vars.css';
+
+@import './components/input.css';
+@import './components/button.css';

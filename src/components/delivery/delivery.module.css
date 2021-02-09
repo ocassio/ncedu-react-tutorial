@@ -1,0 +1,17 @@
+.root {
+    background-color: var(--background);
+    padding: 1.25rem;
+    margin-top: 1rem;
+}
+
+.form {
+    margin: 1rem 0;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.submitButton {
+    margin-top: 1rem;
+    width: 200px;
+}

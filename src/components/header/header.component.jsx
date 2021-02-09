@@ -1,15 +1,16 @@
 import styles from './header.module.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import CartIcon from '../cart-icon/cart-icon.component'
 import Search from '../search/search.component'
 
-const Header = ({ onSearchChange }) => {
+const Header = ({ searchQuery, onSearchChange }) => {
     return (
         <header className={styles.root}>
             <div className={`${styles.logo} ${styles.menuItem}`}>
-                <a href="/">T-Shirt Shop</a>
+                <Link to="/">T-Shirt Shop</Link>
             </div>
-            <Search className={styles.menuItem} onChange={onSearchChange} />
+            <Search className={styles.menuItem} value={searchQuery} onChange={onSearchChange} />
             <CartIcon className={styles.menuItem} />
         </header>
     )

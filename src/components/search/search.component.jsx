@@ -2,7 +2,7 @@ import React from 'react'
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import styles from './search.module.css'
 
-const Search = ({ className, onChange }) => {
+const Search = ({ className, value, onChange }) => {
     const handleChange = (event) => {
         const value = event.target.value
         onChange(value)
@@ -10,7 +10,7 @@ const Search = ({ className, onChange }) => {
 
     return (
         <div className={`${styles.wrapper} ${className}`}>
-            <input type="text" placeholder="Поиск" className={styles.input} onChange={handleChange} />
+            <input type="text" placeholder="Поиск" className={styles.input} value={value} onChange={handleChange} />
             <SearchIcon className={styles.icon} />
         </div>
     )
