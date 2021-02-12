@@ -1,11 +1,18 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
 import styles from './search.module.css'
 
-const Search = ({ className, value, onChange }) => {
+const Search = ({ className }) => {
+    const value = useSelector(state => state.products.query)
+
+    const dispatch = useDispatch()
     const handleChange = (event) => {
         const value = event.target.value
-        onChange(value)
+        dispatch({
+            type: 'setQuery',
+            payload: value
+        })
     }
 
     return (

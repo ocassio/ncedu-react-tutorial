@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 import CartIcon from '../cart-icon/cart-icon.component'
 import Search from '../search/search.component'
 
-const Header = ({ searchQuery, onSearchChange }) => {
+const Header = () => {
     return (
         <header className={styles.root}>
             <div className={`${styles.logo} ${styles.menuItem}`}>
                 <Link to="/">T-Shirt Shop</Link>
             </div>
-            <Search className={styles.menuItem} value={searchQuery} onChange={onSearchChange} />
+            <Search className={styles.menuItem} />
             <CartIcon className={styles.menuItem} />
         </header>
     )

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { useQueryState } from '../../hooks/use-query-state.hook'
 import Cart from '../cart/cart.component'
 import Checkout from '../checkout/checkout.component'
 import Header from '../header/header.component'
@@ -10,17 +9,15 @@ import ScrollToTop from '../scroll-to-top/scroll-to-top.component'
 import styles from './app.module.css'
 
 const App = () => {
-  const [searchQuery, setSearchQuery] = useQueryState('q', '')
-
   return (
     <div>
       <ScrollToTop />
-      <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
+      <Header />
       <div className={styles.container}>
         <main className={styles.main}>
           <Switch>
             <Route path="/" exact>
-              <ProductsList query={searchQuery} />
+              <ProductsList />
             </Route>
             <Route path="/cart">
               <Cart />
