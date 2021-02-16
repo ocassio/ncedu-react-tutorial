@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { selectCartProducts, clearCart } from '../../store/cart/cart.slice'
@@ -27,5 +27,5 @@ const Cart = () => {
     )
 }
 
-export default Cart
+export default memo(Cart)
 

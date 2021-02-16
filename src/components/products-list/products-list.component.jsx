@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, memo } from 'react'
 import ProductCard from '../product-card/product-card.component'
 import styles from './products-list.module.css'
 import Loader from '../loader/loader.component'
@@ -36,4 +36,4 @@ const ProductsList = () => {
     )
 }
 
-export default ProductsList
+export default memo(ProductsList)

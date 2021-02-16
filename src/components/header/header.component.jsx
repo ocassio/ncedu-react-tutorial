@@ -1,5 +1,5 @@
 import styles from './header.module.css'
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import CartIcon from '../cart-icon/cart-icon.component'
 import Search from '../search/search.component'
@@ -16,4 +16,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default memo(Header)

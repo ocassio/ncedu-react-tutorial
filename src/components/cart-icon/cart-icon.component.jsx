@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import { ReactComponent as CartIconSvg } from '../../assets/icons/cart.svg'
 import styles from './cart-icon.module.css'
@@ -18,4 +18,4 @@ const CartIcon = ({ className }) => {
     )
 }
 
-export default CartIcon
+export default memo(CartIcon)
