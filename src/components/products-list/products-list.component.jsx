@@ -1,24 +1,20 @@
 import React, { useEffect, useMemo } from 'react'
 import ProductCard from '../product-card/product-card.component'
 import styles from './products-list.module.css'
-import { loadProducts } from '../../data/products.data'
 import Loader from '../loader/loader.component'
 import { useDispatch, useSelector } from 'react-redux'
+import { loadProducts } from '../../store/products/products.actions'
+import { selectLoading, selectProducts, selectQuery } from '../../store/products/products.selectors'
 
 const ProductsList = () => {
-    const products = useSelector(state => state.products.products)
-    const loading = useSelector(state => state.products.loading)
-    const query = useSelector(state => state.products.query)
+    const products = useSelector(selectProducts)
+    const loading = useSelector(selectLoading)
+    const query = useSelector(selectQuery)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        loadProducts().then(products => {
-            dispatch({
-                type: 'setProducts',
-                payload: products
-            })
-        })
+        dispatch(loadProducts())
     }, [dispatch])
 
     const filteredProducts = useMemo(
