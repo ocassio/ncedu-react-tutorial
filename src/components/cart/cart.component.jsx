@@ -1,8 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { clearCart } from '../../store/cart/cart.actions'
-import { selectCartProducts } from '../../store/cart/cart.selectors'
+import { selectCartProducts, clearCart } from '../../store/cart/cart.slice'
 
 const Cart = () => {
     const products = useSelector(selectCartProducts)
@@ -16,8 +15,8 @@ const Cart = () => {
         <div>
             <h1>Cart</h1>
             <ul>
-                {products.map(({ name }) => (
-                    <li>{name}</li>
+                {products.map(({ id, name }) => (
+                    <li key={id}>{name}</li>
                 ))}
             </ul>
             <button type="button" onClick={handleClearCart}>

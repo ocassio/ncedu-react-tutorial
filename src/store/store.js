@@ -1,17 +1,12 @@
-import { createStore, combineReducers, compose, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import cartReducer from "./cart/cart.reducer";
-import productsReducer from './products/products.reducer'
+import { configureStore } from "@reduxjs/toolkit";
+import { cartReducer } from "./cart/cart.slice";
+import { productsReducer } from './products/products.slice'
 
-const reducer = combineReducers({
-    cart: cartReducer,
-    products: productsReducer
+const store = configureStore({
+    reducer: {
+        cart: cartReducer,
+        products: productsReducer
+    }
 })
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(reducer, composeEnhancers(
-    applyMiddleware(thunk)
-))
 
 export default store

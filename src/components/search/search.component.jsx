@@ -1,8 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { ReactComponent as SearchIcon } from '../../assets/icons/search.svg';
-import { setQuery } from '../../store/products/products.actions';
-import { selectQuery } from '../../store/products/products.selectors';
+import { selectQuery, setQuery } from '../../store/products/products.slice';
 import styles from './search.module.css'
 
 const Search = ({ className }) => {

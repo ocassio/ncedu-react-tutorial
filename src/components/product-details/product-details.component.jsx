@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { products } from '../../data/products.data'
-import { addToCart } from "../../store/cart/cart.actions";
+import { addToCart } from "../../store/cart/cart.slice";
 
 const ProductDetails = () => {
     const { id } = useParams()

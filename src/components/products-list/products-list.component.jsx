@@ -1,28 +1,19 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect } from 'react'
 import ProductCard from '../product-card/product-card.component'
 import styles from './products-list.module.css'
 import Loader from '../loader/loader.component'
 import { useDispatch, useSelector } from 'react-redux'
-import { loadProducts } from '../../store/products/products.actions'
-import { selectLoading, selectProducts, selectQuery } from '../../store/products/products.selectors'
+import { selectLoading, loadProducts, selectFilteredProducts } from '../../store/products/products.slice'
 
 const ProductsList = () => {
-    const products = useSelector(selectProducts)
     const loading = useSelector(selectLoading)
-    const query = useSelector(selectQuery)
+    const filteredProducts = useSelector(selectFilteredProducts)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(loadProducts())
     }, [dispatch])
-
-    const filteredProducts = useMemo(
-        () => products.filter(
-            product => product.name.toLowerCase().includes(query.toLowerCase())
-        ),
-        [query, products]
-    )
 
     return (
         <div className={styles.root}>
